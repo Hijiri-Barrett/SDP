@@ -33,7 +33,7 @@ public class TestDecoratorPattern {
         pizza = new Cheese(pizza);
         print(pizza);
 
-        pizza = new Meat(pizza);
+        pizza = new Ham(pizza);
         print(pizza);
     }
 
