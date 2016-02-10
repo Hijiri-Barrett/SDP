@@ -20,7 +20,7 @@ public class XpayToPayDAdapter implements PayD {
     }
 
     public String getCardOwnerName() {
-        xpay.getCustomerName();
+        return xpay.getCustomerName();
     }
 
     public void setCardOwnerName(String cardOwnerName) {
