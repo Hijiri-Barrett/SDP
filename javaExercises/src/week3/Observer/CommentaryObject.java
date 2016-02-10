@@ -29,12 +29,15 @@ public class CommentaryObject implements Subject, Commentary {
 
     @Override
     public void notifyObservers() {
-
+        for(Observer o : subscribers) {
+            o.update(this.desc);
+        }
     }
 
     @Override
     public String subjectDetails() {
-        return null;
+        String subs = subscribers.toString();
+        return ("Event: " + eventName + " Subscribers: " + subs + ".");
     }
 
     @Override
