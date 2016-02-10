@@ -5,8 +5,8 @@ package week3.Decorator;
  */
 public class SimplyNonVegPizza implements Pizza {
 
-    private String desc = "Non-veggie pizza with ";
-    private double price = 2.5;
+    private double price = 5.5;
+    private String desc = "SimplyNonVegPizza (" + price + ")";
 
     @Override
     public String getDesc() {
