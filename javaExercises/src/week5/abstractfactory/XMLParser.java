@@ -7,8 +7,8 @@ public class XMLParser {
 
     private String msg;
 
-    public XMLParser(String type) {
-        msg = type;
+    public XMLParser(String msg) {
+        this.msg = msg;
     }
 
     public String parse() {

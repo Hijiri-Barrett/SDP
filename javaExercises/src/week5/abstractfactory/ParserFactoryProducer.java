@@ -6,6 +6,11 @@ package week5.abstractfactory;
 public class ParserFactoryProducer {
 
     public static AbstractParserFactory getFactory(String type) {
-        return new NYCFactory();
+
+        if(type.equals("NYCFactory")) { return new NYCFactory(); }
+
+        if(type.equals("LondonFactory")) { return new LondonFactory(); }
+
+        return null;
     }
 }
