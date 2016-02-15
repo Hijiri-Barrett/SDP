@@ -6,7 +6,7 @@ package week5.strategy;
 public class LowerTextFormatter implements TextFormatter {
 
     @Override
-    public void format(String text) {
-        text.toLowerCase();
+    public String format(String text) {
+        return text.toLowerCase();
     }
 }
