@@ -1,4 +1,4 @@
-package week6.classArguments
+package week6.classArguments.p1
 
 import atomic.AtomicTest._
 
