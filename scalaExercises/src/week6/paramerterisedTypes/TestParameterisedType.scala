@@ -20,6 +20,10 @@ object TestParameterisedType extends App {
     Vector(d1, d2, d3)
   }
 
+  def explicitList(vec:Vector[Double]): List[Double] = {
+    vec.toList
+  }
+
   inferred('a', 'b', 'c') is "Vector(a, b, c)"
   explicit('a', 'b', 'c') is "Vector(a, b, c)"
   explicitDouble(1.0, 2.0, 3.0) is Vector(1.0, 2.0, 3.0)
