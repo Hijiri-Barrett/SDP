@@ -14,16 +14,18 @@ object Ex1 extends App{
   v2.map(n => 11 * n + 10) is Vector(21, 32, 43, 54)
 
   val v3 = Vector(1, 2, 3, 4)
-  v3.foreach(n => 11 * n + 10) is Vector(21, 32, 43, 54)
+  v3.foreach(n => 11 * n + 10) is Vector()
 
   // for each does not return a Vector but instead just runs the
   // function for each element.
 
   val v4 = Vector(1, 2, 3, 4)
-  for(n <- 0 to 3) {
-    v4.updated(n, 2*n) //(11 * n + 10)
+  var l1 = Array[Int]()
+  for(n <- v4) {
+    l1 = l1 :+ (11 * n + 10)
   }
-  v4 is Vector(21, 32, 43, 54)
+  val v5 = l1.toVector
+  v5 is Vector(21, 32, 43, 54)
 
-  //screw vectors
+  // much more complex
 }
