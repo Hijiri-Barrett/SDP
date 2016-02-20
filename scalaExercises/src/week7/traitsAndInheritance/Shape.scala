@@ -11,7 +11,7 @@ sealed trait Shape {
   def area : Double
 }
 
-class Circle (radius:Double)extends Shape {
+class Circle (val radius:Double) extends Shape {
 
   override def sides: Int = 1
 
@@ -20,7 +20,7 @@ class Circle (radius:Double)extends Shape {
   override def area: Double = math.Pi * radius * radius
 }
 
-abstract class Rectangular (length:Double, height:Double) extends Shape {
+abstract class Rectangular (val length:Double, val height:Double) extends Shape {
 
   override def sides: Int = 4
 
