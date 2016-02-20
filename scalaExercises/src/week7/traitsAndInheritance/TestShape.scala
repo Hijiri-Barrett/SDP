@@ -21,7 +21,7 @@ class Circle (radius:Double)extends Shape {
   override def area: Double = math.Pi * radius * radius
 }
 
-class Rectangle (length:Double, height:Double) extends Shape {
+abstract class Rectangular (length:Double, height:Double) extends Shape {
 
   override def sides: Int = 4
 
@@ -30,14 +30,9 @@ class Rectangle (length:Double, height:Double) extends Shape {
   override def area: Double = length*height
 }
 
-class Square (length:Double) extends Shape {
+class Rectangle (length:Double, height:Double) extends Rectangular (length, height)
 
-  override def sides: Int = 4
-
-  override def perimeter: Double = 4*length
-
-  override def area: Double = length*length
-}
+class Square (length:Double) extends Rectangular (length, length)
 
 object TestShape {
 
