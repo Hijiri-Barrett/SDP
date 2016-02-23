@@ -7,6 +7,7 @@ class Translator(fileName: String) {
   private final val ADD = "add"
   private final val LIN = "lin"
   private final val MUL = "mul"
+  private final val SUB = "sub"
 
   // word + line is the part of the current line that's not yet processed
   // word has no whitespace
@@ -31,6 +32,8 @@ class Translator(fileName: String) {
             program = program :+ LinInstruction(fields(0), fields(2).toInt, fields(3).toInt)
           case MUL =>
             program = program :+ MulInstruction(fields(0), fields(2).toInt, fields(3).toInt, fields(4).toInt)
+          case SUB =>
+            program = program :+ SubInstruction(fields(0), fields(2).toInt, fields(3).toInt, fields(4).toInt)
           case x =>
             println(s"Unknown instruction $x")
         }
