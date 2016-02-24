@@ -9,16 +9,10 @@ class BnzInstruction (label: String, op: String, val r: Int, label2: String)
   override def execute(m: Machine) {
 
     if(m.regs(r)==0) {
-      import scala.reflect.runtime.{universe => ru}
-      val mirror = ru.runtimeMirror(classOf[Instruction].getClassLoader)
-
-      for(instruction <- m.prog) {
-        val labelTermSymb = ru.typeOf[Instruction].decl(ru.TermName("label")).asTerm
-        val im = mirror.reflect(instruction)
-        val labelMirror = im.reflectField(labelTermSymb)
-
-        if(labelMirror.get == label2) {
-          instruction.execute(m)
+      val labels = m.labels.labels
+      for (i <- 0 until labels.size) {
+        if (labels(i) == label2) {
+          m.prog(i).execute(m)
           return
         }
       }
