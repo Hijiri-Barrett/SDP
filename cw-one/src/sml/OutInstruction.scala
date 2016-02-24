@@ -7,7 +7,7 @@ class OutInstruction (label: String, op: String, val result: Int)
   extends Instruction (label, op) {
 
   override def execute(m: Machine) {
-    println("out: " + result)
+    println("out: reg " + result + " -> " + m.regs(result))
   }
 
   override def toString(): String = {
