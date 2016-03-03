@@ -4,7 +4,7 @@ package sml
  * The translator of a <b>S</b><b>M</b>al<b>L</b> program.
  */
 class Translator(fileName: String) {
-  private final val PACKAGE = "sml."
+  private final val PACKAGE = this.getClass.getPackage.getName
 
   // word + line is the part of the current line that's not yet processed
   // word has no whitespace
@@ -23,8 +23,7 @@ class Translator(fileName: String) {
       if (fields.length > 0) {
         labels.add(fields(0))
 
-
-        val instructionClass = Class.forName(PACKAGE + fields(1).capitalize + "Instruction")
+        val instructionClass = Class.forName(PACKAGE + "." + fields(1).capitalize + "Instruction")
         val constructors = instructionClass.getConstructors
         val dependencies = getDependencies(constructors(0).getParameterTypes, fields)
 
